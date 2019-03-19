@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       canvas {
-        border: 1px solid #d3d3d3;
+        border: 10px solid #d3d3d3;
         background-color: #f1f1f1;
       }
     </style>
@@ -13,10 +13,12 @@
   <body onload="startGame()">
     <script>
       var myGamePiece;
+      var myObstacle;
 
       function startGame() {
+        myGamePiece = new component(20, 20, "red", 10, 10);
+        myObstacle = new component(20, 200, "green", 350, 100);
         myGameArea.start();
-        myGamePiece = new component(30, 30, "red", 10, 120);
       }
 
       var myGameArea = {
@@ -77,6 +79,7 @@
         }
         myGamePiece.newPos();
         myGamePiece.update();
+        myObstacle.update();
       }
     </script>
   </body>
